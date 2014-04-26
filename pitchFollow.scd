@@ -21,8 +21,8 @@ SynthDef("pitchFollow1",{
 	// NOTE: the [0.5,1,2] indicates an octave below, an octave aboce and two octaves above
 	out = Mix.new(VarSaw.ar(freq * [0.5,1,2], 0, LFNoise1.kr(0.3,0.1,0.1), amp));
 	6.do({
-		out = AllpassN.ar(out, 0.040, [0.040.rand,0.040.rand], 2)
+		out = AllpassN.ar(out, 0.040, [0.040.rand,0.040.rand], 2) 	
 	});
 */
-	Out.ar(0,out)
+	Out.ar(0,[out,out])
 }).play(s);)
